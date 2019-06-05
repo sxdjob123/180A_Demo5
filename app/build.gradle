@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.ch.android1"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    //黄油刀依赖(查找Id的)
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'       //黄油刀依赖(查找Id的)
+
+    //(RxJava,MVP)需要添加的依赖
+    implementation 'com.trello:rxlifecycle:0.3.1'
+    implementation 'com.trello:rxlifecycle-components:0.3.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'//转换器，请求结果转换成Model
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'//配合Rxjava 使用
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'  // 必要rxandrroid依赖，切线程时需要用到
+
+    //RxJava内存泄漏需要加的依赖
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-navi:2.1.0'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'   //OkHttp拦截器依赖(log拦截器)
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'             //网络请求   Okhttp3
+
+    //1.1.0 （1.0.5及以前版本的老用户升级需谨慎，API改动过大）
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-21'            //下拉加载更多,上拉刷新的依赖
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-21'          //没有使用特殊Header，可以不加这行(下拉加载更多,上拉刷新的依赖)
+
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    //黄油刀依赖(查找Id的)
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'       //黄油刀依赖(查找Id的)
+
+    //(RxJava,MVP)需要添加的依赖
+    implementation 'com.trello:rxlifecycle:0.3.1'
+    implementation 'com.trello:rxlifecycle-components:0.3.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'//转换器，请求结果转换成Model
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'//配合Rxjava 使用
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'  // 必要rxandrroid依赖，切线程时需要用到
+
+    //RxJava内存泄漏需要加的依赖
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-navi:2.1.0'
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'   //OkHttp拦截器依赖(log拦截器)
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'             //网络请求   Okhttp3
+
+    //1.1.0 （1.0.5及以前版本的老用户升级需谨慎，API改动过大）
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-21'            //下拉加载更多,上拉刷新的依赖
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-21'          //没有使用特殊Header，可以不加这行(下拉加载更多,上拉刷新的依赖)
+    implementation 'com.android.support:recyclerview-v7:28.0.0'        	//RecyclerView的依赖
+
+    implementation 'com.github.bumptech.glide:glide:4.8.0'                  //Glide框架依赖
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'    //Glide框架依赖
+}
